@@ -1,0 +1,154 @@
+!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Эксперементальный макет Flex</title>
+<link rel="stylesheet" href="main.css">
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,italic,300' rel='stylesheet' type='text/css'>
+
+
+
+
+
+
+
+
+</head>
+<body>
+<header>
+    <a href="#">   
+     <img src="logo.png" alt="" height="50" width="50">     
+    </a>
+    
+    <h1>Макет Flex</h1>
+    
+      <form action="/" method="get">
+       <div>  
+            <input type="search" name="search" />    
+            <button type="submit"></button>
+       </div>
+     </form>
+     
+</header>
+
+<nav>
+<button type="button" title="Меню"></button>
+  <ul>
+    <li><a href="https://htmlhook.ru">Главная</a></li>
+    <li><a href="#">О Нас</a></li>
+    <li><a href="#">Фото</a></li>
+    <li><a href="#">Видео</a></li>
+    <li><a href="#">Музыка</a></li>
+  </ul>
+</nav>
+  
+<main>
+
+  <article>
+    <h2>Main Section</h2>
+    <p>Эксперементальный макет Flex</p>
+    <button type="button" title="Исходный код страницы" onclick="window.open('view-source:https://demo.htmlhook.ru/html5/flex/index.htm')">Исходный код</button>
+  
+  <section> 
+     <h2>Галерея</h2>
+  
+           <figure class="galery">
+                  <img src="https://lorempixel.com/150/150/" alt="">            
+                  <img src="https://lorempixel.com/150/150/" alt=""> 
+                  <img src="https://lorempixel.com/150/150/" alt=""> 
+                  <img src="https://lorempixel.com/150/150/" alt="">
+           </figure>
+  
+  </section>
+  
+  <section>
+           <h3>Похожие записи</h3>
+           <ul>
+             <li><a href="https://demo.htmlhook.ru/html5/valid-html5.html" title="Валидная страница HTML5">Валидная семантическая страница HTML5</a> с микроразметкой schema.org</li>
+             <li><a href="https://demo.htmlhook.ru/html5/html5-100/index.htm" title="Cтопроцентный шаблон HTML5">Cтопроцентный шаблон HTML5</a></li>
+          </ul> 
+                  
+  <img id="myImage" 
+      sizes="(min-width:1420px) 610px,
+             (min-width:1320px) 500px,
+             (min-width:1000px) 430px,
+             (min-width:620px)  280px,
+             (min-width:320px)  140px, 140px"
+      srcset="https://lorempixel.com/320/120/sports/ 140w,
+              https://lorempixel.com/620/200/sports/ 280w,
+              https://lorempixel.com/1000/300/animals/ 430w,
+              https://lorempixel.com/1320/400/cats/ 610w,
+              https://lorempixel.com/1420/500/abstract/ 1000w,
+              https://lorempixel.com/1600/600/fashion/ 1220w" 
+      src="https://lorempixel.com/200/100/"
+      alt=""
+ />
+ </section>
+ 
+</article>
+
+  <aside>
+    <h3>Sidebar</h3>
+        <fieldset>
+          <legend>Подписаться</legend>
+          <form>
+            <div>      
+              <label for="name">Имя:</label>    
+              <input id="name" name="name" type="text">
+            </div>
+            <div>    
+              <label for="email">Email:</label>    
+              <input id="email" name="email" type="email">
+            </div>
+          </form>
+        </fieldset>  
+  </aside>
+  
+</main>
+
+<footer>
+  <h4>Макет Флекс CSS</h4>  
+
+  <small>     
+     2016 © <a href="https://htmlhook.ru">htmlhook.ru</a>      
+  </small> 
+   
+  <address>          
+    <a href="mailto:flex@example.com">Обратная связь</a>  
+  </address>
+  
+  <section>
+  
+    <figure>            
+      <img data-galery src="https://lorempixel.com/70/70/" alt="">
+    </figure> 
+    
+          <div class="des">
+            <h4>Картинка</h4> 
+              <p>Изображение генерируется автоматически после перезагрузки страницы.</p>
+          </div>
+    
+  </section>   
+</footer>  
+<script>var img = document.getElementById('myImage');
+var srcset = img.getAttribute("srcset");
+var delay;
+
+window.onresize = function() {
+    
+    if(!isNaN(delay)) clearTimeout(delay);
+    
+    delay = setTimeout(refreshImage, 500);
+    
+}
+
+function refreshImage(){
+  
+  var reg = /([^\s]+)\s(.+)/g;
+  var random = Math.floor(Math.random() * 999999);
+  
+  img.setAttribute("srcset", srcset.replace(reg, "$1?r=" + random + " $2"));
+
+}</script>  
+</body>
+</html>
